@@ -1,7 +1,7 @@
-package Service.RandomArea.client;
+package Service.RandomArea.API;
 
 import Service.RandomArea.Config.KakaoConfig;
-import Service.RandomArea.Controller.Dto.KakaoAPIAddressResponseDto;
+import Service.RandomArea.Controller.Dto.APIAddressResponseDto;
 import Service.RandomArea.exception.CustomException;
 import Service.RandomArea.exception.ErrorCode;
 import lombok.RequiredArgsConstructor;
@@ -15,19 +15,19 @@ import org.springframework.web.client.RestTemplate;
 @Slf4j
 @RequiredArgsConstructor
 @Component
-public class KakaoApiClient {
+public class KakaoApiClient implements MapAPI {
     private final RestTemplate restTemplate;
     private final KakaoConfig kakaoConfig;
-    public KakaoAPIAddressResponseDto getKakaoApiAddress(String x,String y) {
+    public APIAddressResponseDto getApiAddress(String x, String y) {
         String url = "https://dapi.kakao.com/v2/local/geo/coord2address.json?x="+x+"&y="+y+"&input_coord=WGS84";
         HttpHeaders headers = new HttpHeaders(); //헤더 객체 생성
         headers.set("Authorization","KakaoAK "+ kakaoConfig.getKakaoApikey());
         HttpEntity<Void> entity = new HttpEntity<>(headers);
-        ResponseEntity<KakaoAPIAddressResponseDto> response = restTemplate.exchange(
+        ResponseEntity<APIAddressResponseDto> response = restTemplate.exchange(
                 url,
                 HttpMethod.GET,
                 entity,
-                KakaoAPIAddressResponseDto.class
+                APIAddressResponseDto.class
         );
         if(response.getBody() != null && response.getBody().meta().total_count() > 0) {
             return response.getBody();
