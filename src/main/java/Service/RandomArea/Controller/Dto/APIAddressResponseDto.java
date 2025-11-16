@@ -19,6 +19,7 @@ public record APIAddressResponseDto(
     ){
 
         public static record address(
+                String address_name,
                 String region_1depth_name,
                 String region_2depth_name,
                 String region_3depth_name

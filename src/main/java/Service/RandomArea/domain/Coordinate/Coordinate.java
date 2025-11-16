@@ -12,7 +12,7 @@ public class Coordinate {
         this.x = x;
         this.y = y;
     }
-    public void attachAddress(Address address) {
+    public void SetAddress(Address address) {
         this.address = address;
     }
 }

@@ -1,4 +1,4 @@
-package Service.RandomArea.Config;
+package Service.RandomArea.Config.API;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,6 +1,6 @@
 package Service.RandomArea.API;
 
-import Service.RandomArea.Config.KakaoConfig;
+import Service.RandomArea.Config.API.KakaoConfig;
 import Service.RandomArea.Controller.Dto.APIAddressResponseDto;
 import Service.RandomArea.exception.CustomException;
 import Service.RandomArea.exception.ErrorCode;

@@ -2,6 +2,7 @@ package Service.RandomArea.Controller;
 
 import Service.RandomArea.domain.Coordinate.Coordinate;
 import Service.RandomArea.domain.Coordinate.service.CoordinateService;
+import Service.RandomArea.domain.Coordinate.service.CoordinateServiceV1;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +15,7 @@ public class Controller {
 
     private final CoordinateService coordinateService;
     @GetMapping("/create")
-    public Coordinate getCoordinate() {
+    public Coordinate getCoordinate() throws Exception {
         return coordinateService.getRandomCoordinate();
     }
 }

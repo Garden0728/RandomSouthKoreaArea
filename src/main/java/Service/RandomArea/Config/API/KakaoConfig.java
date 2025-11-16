@@ -1,4 +1,4 @@
-package Service.RandomArea.Config;
+package Service.RandomArea.Config.API;
 
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;
