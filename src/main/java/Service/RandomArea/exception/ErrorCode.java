@@ -8,6 +8,8 @@ import lombok.Getter;
 public enum ErrorCode implements CoderInterface{
     NOT_FOUND(-200, "NOT Found Address"),
     RETRY_MAX_COUNT_EXCEEDED(-201, "Retry Max Count Exceeded"),
+    MISS_COORDINATE(-202, "Missing Coordinate"),
+
     SUCCESS(200, "Success");
 
     private final Integer code;
