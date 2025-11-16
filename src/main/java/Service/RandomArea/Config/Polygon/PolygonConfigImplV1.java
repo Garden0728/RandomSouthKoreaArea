@@ -24,7 +24,7 @@ public class PolygonConfigImplV1 implements PolygonConfig {
     private final GeoJsonReader reader = new GeoJsonReader();
     @Bean
     public KoreaPolygon getPolygon() throws Exception {
-            List<Geometry> geometries = getPolygon(jsonInputConfig.getJsonString("korea(small).json"));
+            List<Geometry> geometries = getPolygon(jsonInputConfig.getJsonString("korea.json"));
             return new KoreaPolygon(geometries);
     }
     private List<Geometry> getPolygon(String json) throws Exception {
