@@ -30,10 +30,14 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    //JTS
+    implementation 'org.locationtech.jts:jts-core:1.19.0' //Geometry, Polygon
+    implementation 'org.locationtech.jts.io:jts-io-common:1.19.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.0' //GeoJsonReader, GeoJsonWriter 등 I/O 클래스 포함
+
 
     //swagger
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
-
     implementation 'org.jboss.logging:jboss-logging:3.5.3.Final'
 }
 
