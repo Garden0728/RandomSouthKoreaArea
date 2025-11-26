@@ -8,13 +8,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.InputStream;
+
 @RestController
-@RequestMapping("/api/v1/Random_coordinate-Address")
+@RequestMapping("/api/v1/")
 @RequiredArgsConstructor
 public class Controller {
 
     private final CoordinateService coordinateService;
-    @GetMapping("/create")
+    @GetMapping("Random_coordinate-Address/create")
     public Coordinate getCoordinate() throws Exception {
         return coordinateService.getRandomCoordinate();
     }
