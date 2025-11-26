@@ -30,6 +30,13 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+    //layout
+    implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:3.2.1'
+
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
     //JTS
     implementation 'org.locationtech.jts:jts-core:1.19.0' //Geometry, Polygon
     implementation 'org.locationtech.jts.io:jts-io-common:1.19.0'
