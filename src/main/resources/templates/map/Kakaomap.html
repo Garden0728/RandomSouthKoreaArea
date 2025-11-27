@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html
+        lang="ko"
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{map/layout/layout}"><!-- layout.html 템플릿 가져온 후 content 삽입 후 렌더링-->
+<th:block layout:fragment="content">
+
+    <div class="container-fluid p-0 d-flex justify-content-center">
+
+        <div id="map"></div>
+         <script
+             th:src="@{'//dapi.kakao.com/v2/maps/sdk.js?appkey=' + ${javascript_key}}">
+         </script>
+    </div>
+</th:block>
+</html>
