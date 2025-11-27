@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="~{layout/layout}">
+<th:block th:fragment="sidebarFragment">
+    <!-- Sidebar -->
+    <ul class="navbar-nav sidebar sidebar-dark accordion sidebar-title" id="accordionSidebar">
+        <li>
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" th:href="@{/}">
+                <div class="sidebar-brand-text mx-3">갈래 말래</div>
+            </a>
+            <hr class="sidebar-divider my-0">
+            <button type="button" onclick="areaLandom()" class = "random-button">랜덤뽑기</button>
+            <hr class="sidebar-divider my-0">
+            <div id = "result-box" class="result-box"></div>
+        </li>
+
+    </ul>
+
+</th:block>
+
+</html>
