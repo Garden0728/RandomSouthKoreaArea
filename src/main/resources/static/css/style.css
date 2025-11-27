@@ -1,0 +1,66 @@
+
+#map {
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    border-radius: 12px; /*둥글게 만드는 부분ㄴ*/
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    padding: 0;
+}
+
+#content-wrapper {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.sidebar-title {
+    width: 20rem !important;
+    height: 3rem;
+    background-color: #007bff !important;
+
+}
+
+.sidebar-brand-text {
+    font-size: 1.5rem !important;
+    font-weight: 800; /* 선택 */
+}
+
+.random-button {
+    display: block; /*버튼이 linline상태였어서 margin이 안 먹혀 가운데 정렬이 안되서 한줄 전체를 쓰게 만듬*/
+    margin: 20px auto 20px auto; /*위 오른 아래 왼 순서*/
+    width: 90%;
+    padding: 0.75rem 1rem;
+    background: #fff;
+    color: #1a1a1a;
+    border: 2px solid #1a73e8;
+    border-radius: 12px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.random-button:hover {
+    background: #1a73e8;
+    color: #fff;
+    transform: translateY(-2px);
+}
+.result-box {
+    width: 90%;
+    margin: 15px auto;
+    background: #ffffff;
+    padding: 15px 20px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    line-height: 1.4;
+    color: #1a1a1a;
+    word-break: break-all; /* 주소 길어도 잘려서 줄바꿈됨 */
+}
+.result-box:empty{
+    display: none;
+}
+
+
+
