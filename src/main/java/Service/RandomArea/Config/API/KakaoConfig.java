@@ -9,4 +9,6 @@ import org.springframework.stereotype.Component;
 public class KakaoConfig {
     @Value("${kakao.rest.REST_API_KEY}")
     private String KakaoApikey;
+    @Value("${kakao.javascript.JavaScript_KEY}")
+    private String KakaoJavascriptKey;
 }
