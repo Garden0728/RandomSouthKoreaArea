@@ -21,6 +21,12 @@
 
 }
 
+.sidebar {
+    width: 25vw;
+    max-width: 300px;
+    min-width: 180px;
+}
+
 .sidebar-brand-text {
     font-size: 1.5rem !important;
     font-weight: 800; /* 선택 */
@@ -46,6 +52,7 @@
     color: #fff;
     transform: translateY(-2px);
 }
+
 .result-box {
     width: 90%;
     margin: 15px auto;
@@ -58,7 +65,8 @@
     color: #1a1a1a;
     word-break: break-all; /* 주소 길어도 잘려서 줄바꿈됨 */
 }
-.result-box:empty{
+
+.result-box:empty {
     display: none;
 }
 
