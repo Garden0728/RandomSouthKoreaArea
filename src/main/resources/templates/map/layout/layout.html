@@ -6,12 +6,12 @@
 
 <body id="page-top">
 <div id="wrapper">
-    <!-- 사이드바-->
-    <th:block th:replace="~{map/layout/fragments/sidebar :: sidebarFragment}"></th:block>
-
+    <div id="sidebar-wrapper" class="sidebar-wrapper d-flex flex-column">
+        <!-- 사이드바-->
+        <th:block th:replace="~{map/layout/fragments/sidebar :: sidebarFragment}"></th:block>
+    </div>
     <div id="content-wrapper" class="d-flex flex-column">
         <div id="content">
-
             <!-- 본문-->
             <th:block layout:fragment="content"></th:block>
         </div>

@@ -43,11 +43,11 @@ async function areaLandom() {
     updateResultBox(data);
 }
 function updateResultBox(data){
-    const box = document.getElementById("result-box");
+    let box = document.getElementById("result-box");
     box.innerHTML = `
         <div><b>X:</b> ${data.x}</div>
         <div><b>Y:</b> ${data.y}</div>
-        <div><br> ${data.address.address_name}</div>
+        <div><b>주소:</b> ${data.address.address_name}</div>
     `;
 }
 

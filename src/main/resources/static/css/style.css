@@ -1,4 +1,9 @@
-
+#content-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
 #map {
     width: 100%;
     height: 100vh;
@@ -9,34 +14,45 @@
     padding: 0;
 }
 
-#content-wrapper {
-    padding: 0 !important;
-    margin: 0 !important;
+.sidebar-wrapper {
+
+    width: clamp(180px, 25vw, 360px);
+    background-color: #007bff;
+    align-items: center;
+    gap: 15px;
 }
 
-.sidebar-title {
-    width: 20rem !important;
-    height: 3rem;
-    background-color: #007bff !important;
+@media (max-width: 480px) {
+    .sidebar-wrapper {
+        width: 25vw;
+        height: auto;
+        background-color: #007bff;
+    }
+
+    .result-box {
+        width: 90% !important;
+        font-size: 0.3rem !important;
+        margin: 10px auto;
+    }
+
+    .sidebar-brand-text {
+        font-size: 1.2rem !important;
+        white-space: nowrap;
+    }
 
 }
-
-.sidebar {
-    width: 25vw;
-    max-width: 300px;
-    min-width: 180px;
-}
-
 .sidebar-brand-text {
-    font-size: 1.5rem !important;
-    font-weight: 800; /* 선택 */
+    display: block !important;
+    font-size: clamp(1.2rem, 1.2vw, 2.4rem);
 }
+
 
 .random-button {
     display: block; /*버튼이 linline상태였어서 margin이 안 먹혀 가운데 정렬이 안되서 한줄 전체를 쓰게 만듬*/
     margin: 20px auto 20px auto; /*위 오른 아래 왼 순서*/
     width: 90%;
-    padding: 0.75rem 1rem;
+    font-size: clamp(0.5rem, 1vw, 1.0rem);
+    padding: clamp(0.6rem, 0.8vw, 1.0rem);
     background: #fff;
     color: #1a1a1a;
     border: 2px solid #1a73e8;
@@ -54,21 +70,21 @@
 }
 
 .result-box {
-    width: 90%;
+    width: 95%;
     margin: 15px auto;
     background: #ffffff;
-    padding: 15px 20px;
+    text-align: left;
+    padding: clamp(0.6rem, 0.8vw, 1.3rem);
     border-radius: 12px;
-    font-size: 0.95rem;
+    font-size: clamp(0.5rem, 1vw, 0.8rem);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     line-height: 1.4;
     color: #1a1a1a;
-    word-break: break-all; /* 주소 길어도 잘려서 줄바꿈됨 */
+    white-space: preserve-breaks
 }
 
 .result-box:empty {
     display: none;
 }
-
 
 
