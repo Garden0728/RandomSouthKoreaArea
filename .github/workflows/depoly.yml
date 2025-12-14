@@ -28,13 +28,9 @@ jobs:
           key: ${{ secrets.EC2_PRIVATE_KEY }}
           script_stop: true
           script: |
-            cd /home/ubuntu/RandomSouthKoreaArea
-            rm -rf src/main/resources/application.yml
-            git pull origin master
-            echo "$APPLICATION_PROPERTIES" > src/main/resources/application.yml
-            sudo ./gradlew clean build -x test
-            sudo fuser -k -n tcp 8080 || true
-            nohup java -jar build/libs/*SNAPSHOT.jar > ./output.log 2>&1&
+            cd ~/deploy
+            docker-compose pull
+            docker-compose up -d
       - name: Docker login
         run: |
           echo "${{ secrets.DOCKER_PASSWORD }}" | docker login \
