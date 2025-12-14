@@ -1,0 +1,8 @@
+.git
+.gitignore
+.gradle
+build/tmp
+build/classes
+build/resources
+.idea
+*.log
