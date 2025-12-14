@@ -18,19 +18,19 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: SSH(원격 접속)로 EC2에 접속하기
-        uses: appleboy/ssh-action@v1.0.3
-        env:
-          APPLICATION_PROPERTIES: ${{ secrets.APPLICATION_PROPERTIES }}
-        with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USERNAME }}
-          key: ${{ secrets.EC2_PRIVATE_KEY }}
-          script_stop: true
-          script: |
-            cd ~/deploy
-            docker-compose pull
-            docker-compose up -d
+#      - name: SSH(원격 접속)로 EC2에 접속하기
+#        uses: appleboy/ssh-action@v1.0.3
+#        env:
+#          APPLICATION_PROPERTIES: ${{ secrets.APPLICATION_PROPERTIES }}
+#        with:
+#          host: ${{ secrets.EC2_HOST }}
+#          username: ${{ secrets.EC2_USERNAME }}
+#          key: ${{ secrets.EC2_PRIVATE_KEY }}
+#          script_stop: true
+#          script: |
+#            cd ~/deploy
+#            docker-compose pull
+#            docker-compose up -d
       - name: Docker login
         run: |
           echo "${{ secrets.DOCKER_PASSWORD }}" | docker login \
