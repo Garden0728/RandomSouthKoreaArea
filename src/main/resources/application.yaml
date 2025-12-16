@@ -1,9 +1,10 @@
 spring:
   profiles:
-    active:  ${SPRING_PROFILES_ACTIVE:local}
+    active: ${SPRING_PROFILES_ACTIVE:local}
 
-  kakao:
-    rest:
-      REST_API_KEY: ${KAKAO_REST_API_KEY}
-    javascript:
-      JavaScript_KEY: ${KAKAO_JAVASCRIPT_KEY}
+kakao:
+  rest:
+    REST_API_KEY: ${KAKAO_REST_API_KEY}
+  javascript:
+    JavaScript_KEY: ${KAKAO_JAVASCRIPT_KEY}
+
