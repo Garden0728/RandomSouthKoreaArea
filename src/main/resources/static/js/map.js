@@ -38,7 +38,7 @@ async function getRandomCoordinate() {
 
 async function areaLandom() {
     const data = await getRandomCoordinate();
-    createMarker(parseFloat(data.x), parseFloat(data.y), data.address);
+    createMarker(parseFloat(data.x), parseFloat(data.y));
     createPolygon(data.polygonCoordinates);
     updateResultBox(data);
 }
@@ -50,7 +50,6 @@ function updateResultBox(data){
         <div><b>주소:</b> ${data.address.address_name}</div>
     `;
 }
-
 function removePolygon() {
     if (MapSate.polygon) {
         MapSate.polygon.setMap(null);
