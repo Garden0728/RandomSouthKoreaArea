@@ -20,4 +20,8 @@ public class Controller {
     public Coordinate getCoordinate() throws Exception {
         return coordinateService.getRandomCoordinate();
     }
+    @GetMapping("Health_Check")
+    public String healthCheck() throws Exception {
+        return "OK";
+    }
 }
