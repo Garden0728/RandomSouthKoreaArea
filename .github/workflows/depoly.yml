@@ -41,4 +41,4 @@ jobs:
           script: |
             cd ~/deploy
             docker-compose pull
-            docker-compose up -d
+            ./switch.sh
