@@ -42,10 +42,5 @@ jobs:
           script_stop: true
           script: |
             cd ~/deploy
-#            cat << EOF > .env
-#            SPRING_PROFILES_ACTIVE=prod
-#            KAKAO_REST_API_KEY=${{ secrets.KAKAO_REST_API_KEY }}
-#            KAKAO_JAVASCRIPT_KEY=${{ secrets.KAKAO_JAVASCRIPT_KEY }}
-#            EOF
             docker compose pull
             sudo -E bash ./switchV2.sh
