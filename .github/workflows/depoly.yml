@@ -31,8 +31,6 @@ jobs:
           docker push choijungwon/random-area:latest
       - name: SSH(원격 접속)로 EC2에 접속하기
         uses: appleboy/ssh-action@v1.0.3
-        env:
-          APPLICATION_PROPERTIES: ${{ secrets.APPLICATION_PROPERTIES }}
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
@@ -40,5 +38,10 @@ jobs:
           script_stop: true
           script: |
             cd ~/deploy
+            cat << EOF > .env
+            SPRING_PROFILES_ACTIVE=prod
+            KAKAO_REST_API_KEY=${{ secrets.KAKAO_REST_API_KEY }}
+            KAKAO_JAVASCRIPT_KEY=${{ secrets.KAKAO_JAVASCRIPT_KEY }}
+            EOF
             docker compose pull
             sudo bash ./switchV2.sh
