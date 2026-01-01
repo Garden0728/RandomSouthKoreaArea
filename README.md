@@ -1,3 +1,3 @@
 <h1 align="center">
-  <a href="https://gallamellae.com">🗺️ 갈래말래</a>
+  <a href="https://galle-malle.com">🗺️ 갈래말래</a>
 </h1>
