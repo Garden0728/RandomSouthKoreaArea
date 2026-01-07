@@ -8,3 +8,13 @@ kakao:
   javascript:
     JavaScript_KEY: ${KAKAO_JAVASCRIPT_KEY}
 
+sentry:
+  dsn: ${SENTRY_DSN:}
+  traces-sample-rate: 1.0
+  send-default-pii: true
+  logging:
+    enabled: true
+    minimum-event-level: warn
+    # 에러 전 상황 파악을 위해 info 레벨 로그를 추적
+    minimum-breadcrumb-level: info
+  environment: ${spring.profiles.active}

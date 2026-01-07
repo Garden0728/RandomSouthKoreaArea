@@ -35,6 +35,7 @@ jobs:
           SPRING_PROFILES_ACTIVE: prod
           KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
           KAKAO_JAVASCRIPT_KEY: ${{ secrets.KAKAO_JAVASCRIPT_KEY }}
+          SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
