@@ -46,3 +46,18 @@ jobs:
             cd ~/deploy
             docker compose pull
             sudo -E bash ./switchV2.sh
+
+      - name: Copy deploy fail logs from EC2
+        if: failure()
+        run: |
+          scp -o StrictHostKeyChecking=no \
+            ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }}:/tmp/random-area-*-fail.log ./ || true
+          ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }} \
+          "rm -f /tmp/random-area-*-fail.log" || true
+
+      - name: Upload deploy fail logs
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: deploy-fail-logs
+          path: ./*.log
