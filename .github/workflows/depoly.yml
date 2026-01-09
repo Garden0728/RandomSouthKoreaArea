@@ -55,7 +55,8 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_PRIVATE_KEY }}
           source: "/tmp/deploy-fail.log"
-          target: "./"
+          target: "."
+          strip_components: 1
           rm: true
 
       - name: Upload deploy fail logs
@@ -63,4 +64,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: deploy-fail-logs
-          path: ./*.log
+          path: deploy-fail.log
