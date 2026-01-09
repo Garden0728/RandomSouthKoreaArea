@@ -49,11 +49,14 @@ jobs:
 
       - name: Copy deploy fail logs from EC2
         if: failure()
-        run: |
-          scp -o StrictHostKeyChecking=no \
-            ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }}:/tmp/random-area-*-fail.log ./ || true
-          ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }} \
-          "rm -f /tmp/random-area-*-fail.log" || true
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.EC2_PRIVATE_KEY }}
+          source: "/tmp/random-area-*-fail.log"
+          target: "./"
+          rm: true
 
       - name: Upload deploy fail logs
         if: failure()
