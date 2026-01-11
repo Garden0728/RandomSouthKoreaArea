@@ -47,21 +47,4 @@ jobs:
             docker compose pull
             sudo -E bash ./switchV2.sh
 
-      - name: Copy deploy fail logs from EC2
-        if: failure()
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USERNAME }}
-          key: ${{ secrets.EC2_PRIVATE_KEY }}
-          source: "/tmp/deploy-fail.log"
-          target: "."
-          strip_components: 1
-          rm: true
-
-      - name: Upload deploy fail logs
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: deploy-fail-logs
-          path: deploy-fail.log
+      
