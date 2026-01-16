@@ -33,7 +33,7 @@ public record APIAddressResponseDto(
         }
     }
 
-    public static record address(
+    public record address(
             String address_name,
             String region_1depth_name,
             String region_2depth_name,
