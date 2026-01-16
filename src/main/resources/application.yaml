@@ -7,7 +7,9 @@ kakao:
     REST_API_KEY: ${KAKAO_REST_API_KEY}
   javascript:
     JavaScript_KEY: ${KAKAO_JAVASCRIPT_KEY}
-
+  url:
+    address: https://dapi.kakao.com/v2/local/geo/coord2address.json
+    region: https://dapi.kakao.com/v2/local/geo/coord2regioncode.json
 sentry:
   dsn: ${SENTRY_DSN:}
   traces-sample-rate: 1.0

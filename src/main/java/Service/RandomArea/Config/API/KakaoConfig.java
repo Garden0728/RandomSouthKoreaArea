@@ -11,4 +11,8 @@ public class KakaoConfig {
     private String KakaoApikey;
     @Value("${kakao.javascript.JavaScript_KEY}")
     private String KakaoJavascriptKey;
+    @Value("${kakao.url.address}")
+    private String addressUrl;
+    @Value("${kakao.url.region}")
+    private String regionUrl;
 }
