@@ -39,7 +39,7 @@ public class CoordinateServiceV1 implements CoordinateService {
 
     private boolean validateCoordinate(Coordinate coordinate, int tryCount) {
         try {
-            APIAddressResponseDto apiAddressResponseDto = mapAPI.getApiAddress(coordinate.getX(), coordinate.getY());
+            APIAddressResponseDto apiAddressResponseDto = mapAPI.getAddress(coordinate.getX(), coordinate.getY());
             String address_name = extractAddress(apiAddressResponseDto);
             Address address = CreateAddress(address_name);
             coordinate.SetAddress(address);
