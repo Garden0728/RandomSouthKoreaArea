@@ -86,6 +86,37 @@ html, body {
     z-index: 1;
 }
 
+@media (max-width: 768px) {
+    .topbar {
+        height: auto;
+        padding: 10px 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .topbar-menu {
+        position: static;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    #content {
+        height: calc(100vh - var(--topbar-height));
+    }
+
+    #map {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .random-overlay {
+        right: 12px;
+        bottom: 12px;
+        width: min(300px, 92vw);
+    }
+}
+
 .random-overlay {
     position: absolute;
     right: 20px;
