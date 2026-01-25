@@ -1,0 +1,13 @@
+﻿<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<th:block th:fragment="topbarFragment">
+    <header class="topbar">
+        <a class="topbar-brand" th:href="@{/}">갈래말래</a>
+        <nav class="topbar-menu">
+            <a class="topbar-link" th:href="@{/event}">이벤트</a>
+            <a class="topbar-link" th:href="@{/random}">여행 지역 랜덤 뽑기</a>
+        </nav>
+    </header>
+</th:block>
+</html>
