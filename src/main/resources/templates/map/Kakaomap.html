@@ -1,13 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html
         lang="ko"
         xmlns:th="http://www.thymeleaf.org"
         xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-        layout:decorate="~{map/layout/layout}"><!-- layout.html 템플릿 가져온 후 content 삽입 후 렌더링-->
+        layout:decorate="~{map/layout/layout}">
 <th:block layout:fragment="content">
 
-    <div class="container-fluid p-0 d-flex justify-content-center">
-
+    <div class="container-fluid p-0 d-flex justify-content-center map-container">
         <div id="map"></div>
     </div>
 </th:block>

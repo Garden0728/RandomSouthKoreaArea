@@ -14,5 +14,17 @@ public class MapController {
         model.addAttribute("javascript_key", kakaoConfig.getKakaoJavascriptKey());
         return "map/Kakaomap";
     }
+    @GetMapping("/random")
+    public String random(Model model) {
+        model.addAttribute("javascript_key", kakaoConfig.getKakaoJavascriptKey());
+        return "map/random";
+    }
+
+    @GetMapping("/event")
+    public String event(Model model) {
+        model.addAttribute("javascript_key", kakaoConfig.getKakaoJavascriptKey());
+        return "map/event";
+    }
+
 
 }

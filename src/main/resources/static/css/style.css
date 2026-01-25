@@ -1,55 +1,117 @@
+﻿:root {
+    --topbar-height: 64px;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+#wrapper.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.topbar {
+    height: var(--topbar-height);
+    background-color: #e7f2ff;
+    color: #1f2937;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 16px;
+    border-bottom: 2px solid #d8e8fb;
+    justify-content: center;
+    position: relative;
+}
+
+.topbar-brand {
+    color: #1f2937;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.35rem;
+}
+
+.topbar-menu {
+    display: flex;
+    gap: 8px;
+    position: absolute;
+    right: 16px;
+}
+
+.topbar-link {
+    color: #374151;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.topbar-link:hover {
+    background: #d9e9ff;
+}
+
 #content-wrapper {
     display: flex;
     width: 100%;
-    height: 100vh;
+    flex: 1;
     overflow: hidden;
 }
-#map {
+
+#content {
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - var(--topbar-height));
+    background-color: #e7f2ff;
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.random-page {
+    height: 100%;
+}
+
+#map {
+    width: 70%;
+    height: 100%;
     margin: 0 auto;
-    border-radius: 12px; /*둥글게 만드는 부분ㄴ*/
+    border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     padding: 0;
+    position: relative;
+    z-index: 1;
 }
 
-.sidebar-wrapper {
-
-    width: clamp(180px, 25vw, 360px);
-    background-color: #007bff;
-    align-items: center;
-    gap: 15px;
+.random-overlay {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: min(320px, 80vw);
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 12px;
+    padding: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(6px);
+    z-index: 2;
 }
 
-@media (max-width: 480px) {
-    .sidebar-wrapper {
-        width: 25vw;
-        height: auto;
-        background-color: #007bff;
-    }
-
-    .result-box {
-        width: 90% !important;
-        font-size: 0.3rem !important;
-        margin: 10px auto;
-    }
-
-    .sidebar-brand-text {
-        font-size: 1.2rem !important;
-        white-space: nowrap;
-    }
-
-}
-.sidebar-brand-text {
-    display: block !important;
-    font-size: clamp(1.2rem, 1.2vw, 2.4rem);
+.random-overlay .random-button {
+    margin: 0 0 10px 0;
+    width: 100%;
 }
 
+.random-overlay .result-box {
+    width: 100%;
+    margin: 0;
+}
 
 .random-button {
-    display: block; /*버튼이 linline상태였어서 margin이 안 먹혀 가운데 정렬이 안되서 한줄 전체를 쓰게 만듬*/
-    margin: 20px auto 20px auto; /*위 오른 아래 왼 순서*/
+    display: block; /*버튼을 블록으로 바꿔 중앙 정렬이 되도록*/
+    margin: 20px auto 20px auto; /*상하 여백과 가운데 정렬*/
     width: 90%;
     font-size: clamp(0.5rem, 1vw, 1.0rem);
     padding: clamp(0.6rem, 0.8vw, 1.0rem);
@@ -80,11 +142,9 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     line-height: 1.4;
     color: #1a1a1a;
-    white-space: preserve-breaks
+    white-space: preserve-breaks;
 }
 
 .result-box:empty {
     display: none;
 }
-
-

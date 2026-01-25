@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorator="~{layout/layout}">
@@ -10,9 +10,16 @@
                     <div class="sidebar-brand-text mx-3">갈래 말래</div>
                 </a>
                 <hr class="sidebar-divider my-1">
-                <button type="button" onclick="areaLandom()" class="random-button">랜덤뽑기</button>
-                <hr class="sidebar-divider my-1">
-                <div id="result-box" class="result-box"></div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/event}">
+                    <span>이벤트</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/random}">
+                    <span>여행 지역 랜덤 뽑기</span>
+                </a>
             </li>
 
         </ul>
@@ -20,3 +27,4 @@
 </th:block>
 
 </html>
+
