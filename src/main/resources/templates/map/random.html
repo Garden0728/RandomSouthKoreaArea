@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html
         lang="ko"
         xmlns:th="http://www.thymeleaf.org"
@@ -6,11 +6,57 @@
         layout:decorate="~{map/layout/layout}">
 <th:block layout:fragment="content">
     <div class="random-page">
-        <div class="container-fluid p-0 d-flex justify-content-center map-container">
+        <div class="container-fluid p-0 map-container">
             <div id="map"></div>
+        </div>
+        <div class="condition-panel">
+            <span class="random-label">추천 지역</span>
+            <div class="region-list" role="group" aria-label="추천 지역 선택">
+                <label class="region-item">
+                    <input type="checkbox" name="region" value="seoul">
+                    <span>서울</span>
+                </label>
+                <label class="region-item">
+                    <input type="checkbox" name="region" value="gyeonggi">
+                    <span>경기</span>
+                </label>
+                <label class="region-item">
+                    <input type="checkbox" name="region" value="incheon">
+                    <span>인천</span>
+                </label>
+                <label class="region-item">
+                    <input type="checkbox" name="region" value="gangwon">
+                    <span>강원</span>
+                </label>
+                <label class="region-item">
+                    <input type="checkbox" name="region" value="chungcheong">
+                    <span>충청</span>
+                </label>
+                <label class="region-item">
+                    <input type="checkbox" name="region" value="jeolla">
+                    <span>전라</span>
+                </label>
+                <label class="region-item">
+                    <input type="checkbox" name="region" value="gyeongsang">
+                    <span>경상</span>
+                </label>
+                <label class="region-item">
+                    <input type="checkbox" name="region" value="jeju">
+                    <span>제주</span>
+                </label>
+            </div>
+            <button type="button" class="random-button" id="random-btn">랜덤 뽑기</button>
+            <div id="loading" class="loading">
+                <div class="loading-spinner" aria-hidden="true"></div>
+                <div class="loading-text" id="loading-text">지역을 가져오는 중...</div>
+            </div>
+            <div id="result-box" class="result-box"></div>
+            <button type="button" id="show-map-btn" class="random-button secondary">지도에서 보기</button>
+        </div>
+        <div class="map-overlay">
             <div class="random-overlay">
-                <button type="button" onclick="areaLandom()" class="random-button">랜덤 뽑기</button>
-                <div id="result-box" class="result-box"></div>
+                <div id="map-result-box" class="result-box"></div>
+                <button type="button" id="back-to-conditions" class="random-button secondary">조건 다시 선택</button>
             </div>
         </div>
     </div>
