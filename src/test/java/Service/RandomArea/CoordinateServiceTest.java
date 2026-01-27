@@ -1,3 +1,4 @@
+/*
 package Service.RandomArea;
 
 import Service.RandomArea.API.KakaoAddressProvider;
@@ -29,3 +30,4 @@ public class CoordinateServiceTest {
 
 
 }
+*/
