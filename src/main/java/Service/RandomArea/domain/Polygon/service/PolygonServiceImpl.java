@@ -1,4 +1,4 @@
-package Service.RandomArea.domain.Polygon;
+package Service.RandomArea.domain.Polygon.service;
 
 import Service.RandomArea.Config.Polygon.PolygonConfig;
 import Service.RandomArea.exception.CustomException;
@@ -12,24 +12,35 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+
 @Service
 @Primary
 @RequiredArgsConstructor
 public class PolygonServiceImpl implements PolygonService {
     private final PolygonConfig polygonConfig;
     private final GeometryFactory geometryFactory;
+
     @Override
     public List<List<Double>> getPolygon(double x, double y) throws Exception {
         List<List<Double>> polygon = new ArrayList<>();
-        for(Geometry geometry : polygonConfig.getPolygon().getPolygons()){
-              if(geometry.contains(geometryFactory.createPoint(new Coordinate(x,y)))){
-                  for(Coordinate coordinate : geometry.getCoordinates()){
-                      polygon.add(List.of(coordinate.x,coordinate.y));
-                  }
-                  return polygon;
-              }
+        for (Geometry geometry : polygonConfig.getPolygon().getPolygons()) {
+            if (geometry.contains(geometryFactory.createPoint(new Coordinate(x, y)))) {
+                for (Coordinate coordinate : geometry.getCoordinates()) {
+                    polygon.add(List.of(coordinate.x, coordinate.y));
+                }
+                return polygon;
+            }
         }
         throw new CustomException(ErrorCode.NOT_FOUND_POLYGON);
+    }
 
+    @Override
+    public List<Geometry> getPolygonsByRegions(List<String> regions) throws Exception {
+        return polygonConfig.getPolygon().getPolygonsByRegions(regions);
+    }
+
+    @Override
+    public List<Geometry> getPolygonsByRegion(String region) throws Exception {
+        return polygonConfig.getPolygon().getPolygonsByRegions(List.of(region));
     }
 }
