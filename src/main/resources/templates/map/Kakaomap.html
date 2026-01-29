@@ -5,7 +5,22 @@
         xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
         layout:decorate="~{map/layout/layout}">
 <th:block layout:fragment="content">
-
+    <div class="intro-wrap">
+        <div class="intro-card">
+            <p class="intro-eyebrow">갈래말래</p>
+            <h2 class="intro-title">오늘 어디 갈지 고민될 때</h2>
+            <p class="intro-desc">
+                랜덤 추천으로 결정 스트레스를 줄여요.<br>
+                지역만 고르면 바로 추천을 받아볼 수 있어요.
+            </p>
+            <div class="intro-tags">
+                <span>즉흥 여행이 편한 사람</span>
+                <span>주말 당일치기 찾는 사람</span>
+                <span>선택이 어려운 사람</span>
+            </div>
+            <a class="intro-cta" href="/random">지금 바로 추천 받기</a>
+        </div>
+    </div>
     <div class="container-fluid p-0 map-container">
         <div id="map"></div>
     </div>
