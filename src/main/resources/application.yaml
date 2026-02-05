@@ -1,6 +1,10 @@
 spring:
   profiles:
     active: ${SPRING_PROFILES_ACTIVE:local}
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 10MB
 
 kakao:
   rest:
@@ -24,3 +28,7 @@ sentry:
 slack:
   webhook:
     url: ${SLACK_WEBHOOK_URL}
+
+uploads:
+  dir: ${UPLOAD_DIR:./uploads}
+  base-url: ${UPLOAD_BASE_URL:}

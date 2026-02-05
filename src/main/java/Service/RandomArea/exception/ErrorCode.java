@@ -10,6 +10,7 @@ public enum ErrorCode implements CoderInterface{
     RETRY_MAX_COUNT_EXCEEDED(-201, "Retry Max Count Exceeded"),
     MISS_COORDINATE(-202, "Missing Coordinate"),
     NOT_FOUND_POLYGON(-203, "Not Found Polygon"),
+    SLACK_SEND_FAIL(-204, "Slack Send Failed"),
     SUCCESS(200, "Success");
 
     private final Integer code;

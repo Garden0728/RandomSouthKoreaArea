@@ -37,11 +37,12 @@ jobs:
           KAKAO_JAVASCRIPT_KEY: ${{ secrets.KAKAO_JAVASCRIPT_KEY }}
           SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          UPLOAD_BASE_URL: ${{secrets.UPLOAD_BASE_URL}}
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_PRIVATE_KEY }}
-          envs: SPRING_PROFILES_ACTIVE,KAKAO_REST_API_KEY,KAKAO_JAVASCRIPT_KEY,SENTRY_DSN,SLACK_WEBHOOK_URL
+          envs: SPRING_PROFILES_ACTIVE,KAKAO_REST_API_KEY,KAKAO_JAVASCRIPT_KEY,SENTRY_DSN,SLACK_WEBHOOK_URL,UPLOAD_BASE_URL
           script_stop: true
           script: |
             cd ~/deploy
