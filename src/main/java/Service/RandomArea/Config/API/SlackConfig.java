@@ -7,6 +7,6 @@ import org.springframework.stereotype.Component;
 @Component
 @Getter
 public class SlackConfig {
-    @Value("${slack.webhook.url:}")
+    @Value("${slack.webhook.url}")
     private String webhookUrl;
 }
