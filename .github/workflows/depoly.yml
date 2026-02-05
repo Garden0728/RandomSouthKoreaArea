@@ -41,7 +41,7 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_PRIVATE_KEY }}
-          envs: SPRING_PROFILES_ACTIVE,KAKAO_REST_API_KEY,KAKAO_JAVASCRIPT_KEY,SENTRY_DSN
+          envs: SPRING_PROFILES_ACTIVE,KAKAO_REST_API_KEY,KAKAO_JAVASCRIPT_KEY,SENTRY_DSN,SLACK_WEBHOOK_URL
           script_stop: true
           script: |
             cd ~/deploy
