@@ -20,3 +20,7 @@ sentry:
     # 에러 전 상황 파악을 위해 info 레벨 로그를 추적
     minimum-breadcrumb-level: info
   environment: ${spring.profiles.active}
+
+slack:
+  webhook:
+    url: ${SLACK_WEBHOOK_URL}
