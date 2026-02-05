@@ -5,9 +5,64 @@
         xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
         layout:decorate="~{map/layout/layout}">
 <th:block layout:fragment="content">
-    <div class="container-fluid p-4">
-        <h1 class="h4 mb-3">이벤트</h1>
-        <p class="mb-0">이벤트 페이지를 준비 중입니다.</p>
+    <div class="event-page">
+        <div class="condition-panel event-panel">
+            <div class="event-header">
+                <span class="event-badge">방문 인증 이벤트</span>
+                <h1 class="event-title">방문 인증시 기프티콘 증정!</h1>
+                <p class="event-desc">
+                    랜덤으로 여행을 추천 받고 캡쳐 후 해당 지역에 여행을 한 후 인증샷을 업로드!
+                </p>
+            </div>
+
+            <div class="event-steps">
+                <div class="event-step">
+                    <span class="event-step-index">1</span>
+                    <div>
+                        <div class="event-step-title">랜덤 추천 받기</div>
+                        <div class="event-step-desc">추천 결과를 캡처해 주세요.</div>
+                    </div>
+                </div>
+                <div class="event-step">
+                    <span class="event-step-index">2</span>
+                    <div>
+                        <div class="event-step-title">방문 인증</div>
+                        <div class="event-step-desc">해당 지역에서 인증샷을 찍어주세요.</div>
+                    </div>
+                </div>
+                <div class="event-step">
+                    <span class="event-step-index">3</span>
+                    <div>
+                        <div class="event-step-title">업로드 완료</div>
+                        <div class="event-step-desc">슬랙으로 전달 후 확인됩니다.</div>
+                    </div>
+                </div>
+            </div>
+
+            <form id="verification-form" class="event-form" enctype="multipart/form-data">
+                <div class="event-field">
+                    <label for="verification-region">여행 지역</label>
+                    <input id="verification-region" type="text" name="region" placeholder="예: 강릉" required />
+                </div>
+                <div class="event-field">
+                    <label for="verification-contact">연락처 (전화번호 또는 인스타 ID)</label>
+                    <input id="verification-contact" type="text" name="contact" placeholder="010-0000-0000 / @instagram" required />
+                </div>
+                <div class="event-field">
+                    <label for="verification-capture">캡처 이미지</label>
+                    <input id="verification-capture" type="file" name="capture" accept="image/png,image/jpeg" required />
+                </div>
+                <div class="event-field">
+                    <label for="verification-travel">방문 인증샷</label>
+                    <input id="verification-travel" type="file" name="travel" accept="image/png,image/jpeg" required />
+                </div>
+
+                <div class="event-hint">이미지는 jpg, jpeg, png만 가능하며 5MB 미만이어야 합니다.</div>
+                <button type="submit" class="random-button" id="verification-submit-btn">업로드</button>
+            </form>
+
+            <div id="verification-status" class="event-status"></div>
+        </div>
     </div>
 </th:block>
 </html>
