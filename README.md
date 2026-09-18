@@ -2,7 +2,7 @@
   <a href="https://galle-malle.com">🗺️ 갈래말래</a>
 </h1>
 <p align="center">
-  <b>운영 비용 절감을 위해 서비스 종료했습니다.</b>
+  <b>운영 비용 절감을 위해 서비스 종료했습니다.</b><br/><br/><br/>
   <b>계획 없이 바로 뽑고 떠나는 국내 여행지역 랜덤 뽑기 서비스</b><br/>
   지금 바로 떠나보세요! 👉 <a href="https://galle-malle.com">galle-malle.com</a>
 </p>
