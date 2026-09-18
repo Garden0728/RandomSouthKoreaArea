@@ -1,5 +1,6 @@
 <h1 align="center">
   <a href="https://galle-malle.com">🗺️ 갈래말래</a>
+  <b>운영 비용 절감을 위해 서비스 종료</b><br/>
 </h1>
 
 <p align="center">
